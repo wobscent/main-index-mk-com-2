@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>关于 mk体育 · 一份安静的介绍</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Noto Sans SC', sans-serif;
+      background-color: #fbfaf8;
+      color: #1d1d1f;
+      line-height: 1.8;
+      padding: 2rem 1.2rem;
+    }
+
+    .page {
+      max-width: 660px;
+      margin: 0 auto;
+    }
+
+    /* header 区域 —— 极简博客式标题 */
+    .blog-header {
+      padding-top: 1.2rem;
+      border-bottom: 1px solid #e6e2dd;
+      padding-bottom: 1.2rem;
+      margin-bottom: 2.8rem;
+    }
+
+    .blog-header h1 {
+      font-size: 2.1rem;
+      font-weight: 500;
+      letter-spacing: -0.01em;
+      color: #111;
+      margin-bottom: 0.4rem;
+    }
+
+    .meta-line {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.6rem 1.2rem;
+      font-size: 0.85rem;
+      color: #7a7672;
+    }
+
+    .meta-line span {
+      font-style: normal;
+    }
+
+    /* 导语 / 引用块 */
+    .intro-quote {
+      background: #f2efe9;
+      padding: 1.6rem 2rem;
+      border-radius: 20px;
+      margin-bottom: 2.6rem;
+      font-size: 1.05rem;
+      color: #2b2927;
+      border-left: 4px solid #9a8e82;
+    }
+
+    .intro-quote p {
+      margin-bottom: 0.6rem;
+    }
+
+    .intro-quote p:last-child {
+      margin-bottom: 0;
+    }
+
+    .intro-quote em {
+      font-style: italic;
+      color: #5f5349;
+    }
+
+    /* 正文段落 */
+    .content p {
+      margin-bottom: 1.5rem;
+      font-size: 1rem;
+      color: #2b2a28;
+    }
+
+    .content h2 {
+      font-size: 1.5rem;
+      font-weight: 450;
+      margin: 2.4rem 0 0.8rem 0;
+      letter-spacing: -0.02em;
+      color: #1f1e1c;
+    }
+
+    .content h3 {
+      font-size: 1.2rem;
+      font-weight: 440;
+      margin: 1.8rem 0 0.6rem 0;
+      color: #2f2c29;
+    }
+
+    .divider {
+      height: 1px;
+      background: #ddd9d3;
+      margin: 2.2rem 0;
+    }
+
+    /* 引用样式 */
+    .block-beside {
+      background: #f5f2ed;
+      padding: 1.4rem 1.8rem;
+      border-radius: 14px;
+      margin: 2rem 0;
+    }
+
+    .block-beside p {
+      margin-bottom: 0.6rem;
+      font-size: 0.95rem;
+    }
+
+    .block-beside p:last-child {
+      margin-bottom: 0;
+    }
+
+    .small-note {
+      font-size: 0.9rem;
+      color: #5f5851;
+      padding-left: 1rem;
+      border-left: 2px solid #b7aea4;
+      margin: 1.6rem 0;
+    }
+
+    /* 特色列表 */
+    .feature-list {
+      list-style: none;
+      padding: 0;
+      margin: 1.2rem 0 1.8rem 0;
+    }
+
+    .feature-list li {
+      padding: 0.5rem 0 0.5rem 1.4rem;
+      position: relative;
+      color: #302d2a;
+    }
+
+    .feature-list li::before {
+      content: "·";
+      position: absolute;
+      left: 0;
+      color: #877d72;
+      font-weight: bold;
+    }
+
+    /* 链接样式 */
+    a {
+      color: #1d1d1f;
+      text-decoration: underline;
+      text-underline-offset: 0.15em;
+      text-decoration-color: #b1a79d;
+      transition: text-decoration-color 0.2s;
+    }
+
+    a:hover {
+      text-decoration-color: #1d1d1f;
+    }
+
+    /* 访问句 + 结尾 */
+    .closing-line {
+      margin-top: 2.8rem;
+      padding-top: 1.8rem;
+      border-top: 1px solid #e6e2dd;
+      font-size: 0.95rem;
+      color: #3b3834;
+    }
+
+    .closing-line a {
+      font-weight: 450;
+    }
+
+    /* FAQ 摘要 (简洁) */
+    .faq-mini {
+      margin-top: 2rem;
+      background: #f7f4ef;
+      padding: 1.4rem 1.8rem;
+      border-radius: 18px;
+    }
+
+    .faq-mini strong {
+      font-weight: 500;
+      display: block;
+      margin-bottom: 0.3rem;
+      color: #1f1d1a;
+    }
+
+    .faq-mini p {
+      font-size: 0.92rem;
+      margin-bottom: 0.8rem;
+      color: #3e3a35;
+    }
+
+    .faq-mini p:last-child {
+      margin-bottom: 0;
+    }
+
+    /* 响应式微调 */
+    @media (max-width: 480px) {
+      body {
+        padding: 1.2rem 0.9rem;
+      }
+
+      .blog-header h1 {
+        font-size: 1.7rem;
+      }
+
+      .intro-quote {
+        padding: 1.2rem 1.2rem;
+      }
+
+      .content h2 {
+        font-size: 1.3rem;
+      }
+    }
+  </style>
+</head>
+<body>
+<div class="page">
+
+  <header class="blog-header">
+    <h1>mk体育 · 一份安静的入口说明</h1>
+    <div class="meta-line">
+      <span>稳定入口</span>
+      <span>·</span>
+      <span>页面说明</span>
+      <span>·</span>
+      <span>2025</span>
+    </div>
+  </header>
+
+  <!-- 导语 / 引用 -->
+  <div class="intro-quote">
+    <p>如果你已经听说过 <a href="https://main-index-mk.com">mk体育</a> 这个名字，却还不清楚它究竟以怎样的方式存在——</p>
+    <p>这一页就是为你准备的。不喧哗，不催促，只是把来龙去脉写清楚。</p>
+  </div>
+
+  <div class="content">
+
+    <h2>从稳定入口说起</h2>
+    <p>很多体育类站点，页面结构复杂，链接层层嵌套，用户常常需要绕好几步才找到自己真正想看的。而 <a href="https://main-index-mk.com">mk体育</a> 从一开始就将“直接”当作默认原则。它的主页面不堆砌横幅、不弹窗干扰，更像一个干净的起点——你可以从这里出发，也可以随时回到这里。</p>
+    <p>所谓稳定入口，并不是一个技术词汇，而是一种使用感受。无论你习惯用手机还是电脑，无论你身处哪座城市，那个地址始终有效，页面结构保持一致。它不会突然改版让你找不到北，也不会为了促销而改变布局。</p>
+
+    <h3>信息呈现上的克制</h3>
+    <p>在这个信息过载的时代，克制本身就是一种指引。浏览 <a href="https://main-index-mk.com">mk体育</a> 时，你会发现它把赛程、实时数据、球队动态放在明确的位置，没有多余装饰。文字和符号各归其位，颜色低调，字体清晰。有人觉得它过于朴素，但更多人觉得——这正是体育信息该有的样子：直接，且值得信赖。</p>
+
+    <div class="block-beside">
+      <p>💬 一位读者留言说：“以前打开体育站总要先关三四个弹窗，第一次打开这里，居然有点不习惯。后来才明白，干净才是正常状态。”</p>
+    </div>
+
+    <h2>设计的退让：让内容站在前面</h2>
+    <p>许多网站试图用界面设计来吸引点击，但 mk 体育选择了另一种方式：让界面退后。没有夸张的渐变背景，没有自动播放的视频，也没有突然浮出的订阅框。页面中的每一条信息都来自对体育内容本身的信任，而不是依靠视觉轰炸。</p>
+    <p>从首页到次级页面，字体大小、行间距、留白比例都保持统一。你在读这篇文章时感受到的呼吸感，并非偶然，而是刻意维持的节奏。</p>
+
+    <div class="small-note">
+      值得一提的是，mk体育 在移动端的适配做得相当自然。无论横竖屏切换还是字号调整，排版都不会错乱。这在今天看起来好像是基础功能，但真正做到的体育站点并不多。
+    </div>
+
+    <h3>适合怎样的场景？</h3>
+    <ul class="feature-list">
+      <li>比赛日快速查实时比分，不需要等待广告加载。</li>
+      <li>深夜浏览赛程，页面不刺眼，阅读无障碍。</li>
+      <li>分享链接给朋友时，对方不会收到杂乱的页面。</li>
+      <li>偶尔回头找之前看过的数据，结构和上周一样。</li>
+    </ul>
+
+    <h2>FAQ 摘要</h2>
+    <div class="faq-mini">
+      <strong>▎ 是否需要注册才能浏览？</strong>
+      <p>不需要。主页及大部分内容无需登录即可查看，仅部分个性化功能（如收藏球队）建议注册。</p>
+      <strong>▎ 页面上的信息更新频率如何？</strong>
+      <p>赛事数据实时更新，文字部分一般于比赛结束后数分钟内完成同步。具体视赛事来源而定。</p>
+      <strong>▎ 为什么页面没有任何社交分享按钮？</strong>
+      <p>我们刻意简化了页面元素，分享功能通过浏览器原生菜单即可完成，无需额外插件。</p>
+    </div>
+
+  </div><!-- /content -->
+
+  <!-- 访问句 -->
+  <div class="closing-line">
+    <p>如果你正在寻找一个不吵闹、不绕路的体育内容起点，不妨试试 <a href="https://main-index-mk.com">mk体育</a>。它或许不如某些门户那样热闹，但它一直在那里，稳定、清晰、安静地更新着。</p>
+    <p style="margin-top: 0.8rem; font-size: 0.85rem; color: #6f6760;">—— 仅此而已，但已足够。</p>
+  </div>
+
+  <!-- 留白底部 -->
+  <div style="height: 2rem;"></div>
+</div>
+</body>
+</html>
